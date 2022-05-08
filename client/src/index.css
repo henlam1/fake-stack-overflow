@@ -1,1 +1,427 @@
 /* Add CSS */
+/* Add CSS */
+/* Add CSS */
+/* Add CSS */
+/* Add CSS stylesheet */
+
+body, html{
+    margin:0;
+    padding:0;
+}
+
+/* WELCOME PAGE AND FORMS */
+#welcomeBanner{
+    background-color: lightgray;
+    display : flex;
+    justify-content: center;
+    text-align: center; 
+    top: 0;
+    width:100%;
+}
+
+#welcomeBanner h1{
+    font-weight: bold;
+    margin: 1%;
+}
+
+#welcome{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: left;
+    margin: 2% 20%;
+}
+
+#welcome button{
+    background-color: #165A92;
+    border:2px groove black;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 1%;
+    padding: 1%;
+    width: 10%;
+}
+
+#welcome button:hover{
+    background-color: #1e7bc8;
+}
+
+#welcome button:active{
+    background-color: #228ae0;
+}
+
+#loginForm input{
+    height: 4vh;
+    width: 100%;
+    resize: none;
+}
+
+#createForm input{
+    height: 4vh;
+    width: 100%;
+    resize: none;
+}
+
+/*Top and Secondary Banners */
+.banner {
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content:space-between;
+    text-align: center;
+    margin: 0 auto;
+}
+
+
+/*Top Banner */
+#topBanner{
+    background-color: lightgray;
+    position: sticky;   /*Life Saving Mental Boom Preventin Feature*/
+    text-align: center; 
+    top: 0;
+    width:100%;
+}
+
+#topBanner button {
+    /*Width 7*2 = 14*/
+    background-color: transparent;
+    border: none;
+    color: black;
+    cursor: pointer;
+    font-size: large;
+    text-decoration: none;
+    width: 10%;
+}
+  
+#topBanner button:hover {
+    background-color: gray;
+}
+
+#topBanner h1{
+    /*Width 69 + 2 = 71*/
+    font-weight: bold;
+    margin: 1%;
+    width: 38%;
+}
+
+#topBanner input{
+    border: 2px groove black;
+    border-radius: 5px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-indent: 5px;
+    width: 9%;
+}
+
+#topBanner input:focus{
+    border-color: #66afe9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+}
+
+
+/*Secondary Banner */
+#secondBanner{
+    margin: 3%;
+}
+
+#secondBanner button{
+    background-color: #165A92;
+    border:2px groove black;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 1%;
+    padding: 1%;
+    width: 10%;
+}
+
+#secondBanner button:hover{
+    background-color: #1e7bc8;
+}
+
+#secondBanner button:active{
+    background-color: #228ae0;
+}
+
+#secondBanner h2{
+    margin-top: auto;
+    margin-bottom: auto;   
+    width: 11%;
+}
+
+#secondBanner #middle{
+    width: 70%;
+}
+
+
+/*Main */
+#main{
+    display: inline-block;
+    height:fit-content;
+    width: 96%;
+    margin-left: 2%;
+}
+
+.questionBlock{
+    display : flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+    height: 15%;
+}
+.commentBlock{
+    display : flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+.answer{
+    width: 80%;
+    font-size: large;
+    /* font-weight: 900; */
+}
+
+.left{
+    width: 20%;
+    font-size: x-large;
+    font-weight: 900;
+}
+
+.votes{
+    display: flex;
+    flex-direction: row;
+    column-gap: 10%;
+    margin: 1%;
+}
+
+.arrow {
+    border: solid black;
+    border-width: 0 3px 3px 0;
+    display: inline-block;
+    padding: 3px;
+  }
+
+.up {
+transform: rotate(-135deg);
+-webkit-transform: rotate(-135deg);
+}
+
+.down {
+transform: rotate(45deg);
+-webkit-transform: rotate(45deg);
+}
+
+.middle{
+    align-content: flex-start;
+    display:flex;
+    flex-direction: column;
+    font-size: large;
+    gap: 1vh;
+    justify-content: flex-start;
+    width: 60%;
+}
+.middleText{
+    word-wrap: break-word;
+    color:#228ae0;
+    font-size: x-large;
+    font-weight: 900;
+    margin:0;
+    overflow-wrap: anywhere;
+}
+.middleText:hover{
+    color: #165A92; 
+    cursor: pointer;
+}
+.middleTagBox{
+    align-content: flex-start;
+    align-items: center;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    gap: 1vh;
+    justify-content: flex-start;
+    width: 100%;
+}
+.middleSummary{
+    word-wrap: break-word;
+}
+.qTag{
+    background-color: gray;
+    border: black;
+    border-radius: 50px;
+    color:white;
+    flex-basis: 20%;
+    font-weight: 400;
+    text-align: center;
+    padding: 2px;
+}
+.middle input{
+    border: 2px groove black;
+    border-radius: 5px;
+    margin-top: 1%;
+    margin-bottom: 1%;
+    text-indent: 5px;
+    height: 4vh;
+    width: 20%;
+}
+.middle input:focus{
+    border-color: #66afe9;
+    box-shadow: 0 1px 1px rgba(0, 0, 0, 0.075) inset, 0 0 8px rgba(102, 175, 233, 0.6);
+    outline: 0 none;
+}
+
+.right{
+    width: 20%;
+    text-align: right;
+}
+
+hr.dashed {
+    border-top: 3px dashed #bbb;
+    margin-left: 0;
+    margin-right: 0;
+}
+#buttonBanner{
+    display: flex;
+    width: 20%;
+}
+#left{
+    justify-content: left;
+}
+#right{
+    justify-content: right;
+}
+
+
+/* Question Form */
+.form {
+    background-color: white;
+    text-align: left;
+    margin: 2% 20%;
+}
+
+.form p{
+    text-align: center;
+    color: red;
+    margin:0;
+}
+
+.form input{
+    height:5%;
+    width:80%;
+}
+
+.form h1{
+    margin: 0;
+    padding: 0;
+}
+
+.form textarea{
+    height: 4vh;
+    width: 100%;
+    resize: none;
+}
+
+.form textarea[name = "qtext"]{
+    height: 20vh;
+}
+
+.form textarea[name = "atext"]{
+    height: 40vh;
+}
+
+.form button, #answerFormButton, .answerForm button{
+    background-color: #165A92;
+    border:2px groove black;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 1%;
+    padding: 1%;
+    width: fit-content;
+}
+
+.form button:hover, #answerFormButton:hover, .answerForm button:hover{
+    background-color: #1e7bc8;
+}
+
+.form button:active, #answerFormButton:active, .answerForm button:active{
+    background-color: #228ae0;
+}
+
+/* Answer List */
+#answerFormButton{
+    margin: auto;
+    margin-top: 2%;
+}
+
+/*Tag Display */
+.tagDisplay{
+    display:flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+    justify-content: space-around;
+}
+/* WIDTH TOTAL = 96 EACH BLOCK SHOULD BE AROUND 30. FLEX BASIS 16 + 2(MARGIN + PADDING) */
+.tagBlock{
+    border: 3px black;
+    border-style: groove;
+    display: inline-block;
+    flex-flow: column;
+    font-size: x-large;
+    font-weight: bolder;
+    text-align: center;
+    padding: 2%;
+    width: 16%;
+    margin: 5%;
+}
+.tagDisplay p{
+    cursor: pointer;
+    color: rgb(34, 138, 224);
+    overflow-wrap: break-word;
+    text-decoration: underline;
+}
+.tagDisplay p:hover{
+    color: #165A92; 
+    cursor: pointer;
+}
+
+#userDisplay{
+    display:flex;
+    flex-flow: row;
+}
+#sideBar{
+    display: flex;
+    flex-flow: column;
+    height: 100%
+}
+
+#sideBar button{
+    background-color: #165A92;
+    border:2px groove black;
+    border-radius: 10px;
+    color: white;
+    cursor: pointer;
+    font-size: 1.17em;
+    font-weight: bold;
+    margin: 1%;
+    padding: 1%;
+    width: 100%;
+}
+
+#sideBar button:hover{
+    background-color: #1e7bc8;
+}
+
+#sideBar button:active{
+    background-color: #228ae0;
+}
