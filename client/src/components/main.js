@@ -342,6 +342,7 @@ export default class Main extends React.Component {
             }
 
             const ans = [];
+            const qcBar = [];
             let aGuess = 5 * (this.props.apage + 1);
             let aLastIndex = answers.length < aGuess ? answers.length : aGuess
             let cPageIndex = 0
@@ -359,6 +360,7 @@ export default class Main extends React.Component {
                 const ansAt = time.getHours() + ":" + time.getMinutes();
                 
                 const aComments = []
+                const acBar = []
                 let acGuess = 3 * (this.props.cpage[cPageIndex] + 1);
                 let acLastIndex = answer.comments.length < acGuess ? answer.comments.length : acGuess
 
@@ -391,6 +393,23 @@ export default class Main extends React.Component {
                 }
                 if(this.props.cpage[cPageIndex] < Math.ceil((answer.comments.length / 3) - 1)){
                     acNext.push(<button onClick={() => this.props.onCommentNextClick(workAround)}>Next</button>)
+                }
+                if(this.props.user.user !== "guest"){
+                    acBar.push(
+                        <div className = "questionBlock">
+                        <div className = "left"></div>
+                        <div className = "middle">
+                            <input 
+                                placeholder = "Enter an Insightful Comment" 
+                                onKeyDown = {(e) => {
+                                if(e.key === 'Enter') {this.props.onCommentSubmit(e.target.value, "answer", answer._id);}
+                                }}
+                                id = "sBar">
+                            </input>
+                        </div>
+                        <div className = "right"></div>
+                    </div>
+                    )
                 }
                 ans.push(<div key = {answer._id}>
                     <br></br>
@@ -430,29 +449,32 @@ export default class Main extends React.Component {
                         {<br></br>}
                         </div>
                     </div>
-                    <div className = "questionBlock">
-                        <div className = "left"></div>
-                        <div className = "middle">
-                            <input 
-                                placeholder = "Enter an Insightful Comment" 
-                                onKeyDown = {(e) => {
-                                if(e.key === 'Enter') {this.props.onCommentSubmit(e.target.value, "answer", answer._id);}
-                                }}
-                                id = "sBar">
-                            </input>
-                        </div>
-                        <div className = "right"></div>
-                    </div>
+                    {acBar}
                     <br></br>
                     <hr className = "dashed"></hr>
                 </div>)
             }
             
-            if(this.props.user !== "guest"){
+            if(this.props.user.user !== "guest"){
                 ans.push(
                 <div className = "questionBlock">
                 <button id = "answerFormButton" onClick={() => this.props.onAnswerFormClick()}>Answer Question</button>
                 </div>)
+                qcBar.push(
+                    <div className = "questionBlock">
+                            <div className = "left"></div>
+                            <div className = "middle">
+                                <input 
+                                placeholder = "Enter an Insightful Comment" 
+                                onKeyDown = {(e) => {
+                                if(e.key === 'Enter') {this.props.onCommentSubmit(e.target.value, "question", question._id);}
+                                }}
+                                id = "sBar">
+                                </input>
+                            </div>
+                            <div className = "right"></div>
+                    </div>
+                )
             }
             const aPrev = [], aNext = [];
             if(this.props.apage > 0){
@@ -509,19 +531,7 @@ export default class Main extends React.Component {
                             {qcNext}
                         </div>   
                     </div>
-                    <div className = "questionBlock">
-                            <div className = "left"></div>
-                            <div className = "middle">
-                                <input 
-                                placeholder = "Enter an Insightful Comment" 
-                                onKeyDown = {(e) => {
-                                if(e.key === 'Enter') {this.props.onCommentSubmit(e.target.value, "question", question._id);}
-                                }}
-                                id = "sBar">
-                                </input>
-                            </div>
-                            <div className = "right"></div>
-                    </div>
+                    {qcBar}
                     <hr className = "dashed"></hr>
                     {ans}
                     <br></br><br></br>

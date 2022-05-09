@@ -586,32 +586,39 @@ export default class FakeStackOverflow extends React.Component {
   }
   handleVote(thing, thing_id, bool, index, u_id){
     try{
-      const match = (this.state.user._id === u_id)? true : false
-      if(index >= 0){
-        axios.get('http://localhost:8000/main/vote', {params: {params: [thing, thing_id, bool, u_id]}})
-        .then(res => {
-          console.log(res.data)
-          console.log("VOTE RESULTS: " + res.data)
-          const display = this.state.displayResults;
-          display[index] = res.data[1];
-          this.setState({
-            ...this.state,
-            user: (match) ? res.data[0] : this.state.user,
-            displayResults: display,
+      let user = this.state.user;
+      const highRep = (user.reputation >= 100) ? true : false;
+      if(highRep){
+        const match = (this.state.user._id === u_id)? true : false
+        if(index >= 0){
+          axios.get('http://localhost:8000/main/vote', {params: {params: [thing, thing_id, bool, u_id]}})
+          .then(res => {
+            console.log(res.data)
+            console.log("VOTE RESULTS: " + res.data)
+            const display = this.state.displayResults;
+            display[index] = res.data[1];
+            this.setState({
+              ...this.state,
+              user: (match) ? res.data[0] : this.state.user,
+              displayResults: display,
+            })
           })
-        })
+        }
+        else{
+          axios.get('http://localhost:8000/main/vote', {params: {params: [thing, thing_id, bool, u_id]}})
+          .then(res => {
+            console.log(res.data)
+            console.log("VOTE RESULTS: " + res.data)
+            this.setState({
+              ...this.state,
+              user: (match) ? res.data[0] : this.state.user,
+              questionDisplayed: res.data[1],
+            })
+          })
+        }
       }
       else{
-        axios.get('http://localhost:8000/main/vote', {params: {params: [thing, thing_id, bool, u_id]}})
-        .then(res => {
-          console.log(res.data)
-          console.log("VOTE RESULTS: " + res.data)
-          this.setState({
-            ...this.state,
-            user: (match) ? res.data[0] : this.state.user,
-            questionDisplayed: res.data[1],
-          })
-        })
+        alert("Not high enough rep to vote")
       }
     }
     catch(error){
