@@ -6,15 +6,15 @@
 // The server should run on localhost port 8000.
 // This is where you should start writing server-side code for this application.
 
-// cd C:\Users\henry\Github Stuff\final-project-henlam1\server
+// cd C:\Users\henry\CSE 220 CSE 316 Stuff\final-project-henlam1\server
 // mongod
 // New CMD
-// cd C:\Users\henry\Github Stuff\final-project-henlam1\server
+// cd C:\Users\henry\CSE 220 CSE 316 Stuff\final-project-henlam1\server
 // npm run devStart
 // OR
 // nodemon server mongodb://127.0.0.1:27017/fake_so
 // NEW CMD
-// cd C:\Users\henry\Github Stuff\final-project-henlam1\client
+// cd C:\Users\henry\CSE 220 CSE 316 Stuff\final-project-henlam1\client
 // npm start
 
 //Database Access
